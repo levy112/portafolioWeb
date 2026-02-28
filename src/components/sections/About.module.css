@@ -1,0 +1,107 @@
+.about {
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-16);
+    align-items: center;
+}
+
+.imageWrapper {
+    position: relative;
+}
+
+.imageContainer {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    background: var(--color-bg-tertiary);
+}
+
+.imageContainer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid var(--glass-border);
+    pointer-events: none;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-secondary) 100%);
+}
+
+.imageGlow {
+    position: absolute;
+    inset: -20px;
+    background: var(--color-accent-gradient);
+    border-radius: var(--radius-xl);
+    opacity: 0.15;
+    filter: blur(40px);
+    z-index: -1;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.bio {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+}
+
+.detailIcon {
+    font-size: var(--font-size-lg);
+    width: 28px;
+    text-align: center;
+}
+
+.detailLabel {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-right: var(--space-2);
+}
+
+.cta {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+    }
+
+    .imageContainer {
+        max-width: 300px;
+        margin-inline: auto;
+    }
+}

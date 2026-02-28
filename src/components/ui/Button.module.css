@@ -1,0 +1,85 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-wide);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.button:hover::before {
+    opacity: 1;
+}
+
+/* ─── Primary ─── */
+.primary {
+    background: var(--color-accent-gradient);
+    color: white;
+    box-shadow: var(--shadow-glow);
+}
+
+.primary::before {
+    background: var(--color-accent-gradient-hover);
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-accent);
+}
+
+.primary:active {
+    transform: translateY(0);
+}
+
+/* ─── Outline ─── */
+.outline {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.outline:hover {
+    border-color: var(--color-accent-primary);
+    color: var(--color-accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ─── Ghost ─── */
+.ghost {
+    background: transparent;
+    color: var(--color-text-secondary);
+}
+
+.ghost:hover {
+    color: var(--color-accent-primary);
+    background: rgba(124, 58, 237, 0.1);
+}
+
+/* ─── Sizes ─── */
+.sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-xs);
+}
+
+.lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-base);
+}
