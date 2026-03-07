@@ -16,8 +16,8 @@ export const PERSONAL_INFO: PersonalInfo = {
     email: 'levyjoanisanchezrivera@gmail.com',
     location: 'Cuajimalpa de Morelos, CDMX, México',
     bio: 'Desarrollador Full Stack con dominio avanzado en Java/Spring Boot, Python y React. Experiencia sólida en administración de bases de datos (PostgreSQL, Oracle, SQL Server, Sybase) y arquitectura de microservicios. He logrado mejorar el rendimiento de sistemas en un 70% mediante optimización de APIs y bases de datos. Competente en DevOps (Docker, Kubernetes, CI/CD) e integración de IA/ML.',
-    avatarUrl: '/avatar.webp',
-    resumeUrl: '/CV - Levy Sanchez Rivera - Desarrollador Full Stack.pdf',
+    avatarUrl: '/portafolioWeb/profile.jpg',
+    resumeUrl: '/portafolioWeb/cv-levy-sanchez.pdf',
     socialLinks: [
         { name: 'GitHub', url: 'https://github.com/levy112', icon: 'github' },
         { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'linkedin' },
@@ -59,6 +59,31 @@ export const SKILLS: Skill[] = [
 ];
 
 export const PROJECTS: Project[] = [
+    {
+
+        "id": "ecomerce-levy",
+        "title": "Levy E-Commerce Platform",
+        "description": "Plataforma de comercio electrónico premium desarrollada con React 19, Vite y TypeScript.",
+        "longDescription": "Aplicación web de vanguardia que utiliza Feature-Sliced Design (FSD) para una arquitectura escalable y mantenible. Incluye una experiencia de usuario fluida con React Router para navegación, gestión de estado modular con Zustand, y un sistema de diseño personalizado basado en CSS Modules y variables CSS, garantizando un rendimiento óptimo y una estética moderna.",
+        "image": "/projects/ecommerce.webp",
+        "tags": ["REACT", "VITE", "TYPESCRIPT", "ZUSTAND", "FSD", "CSS-MODULES"],
+        "category": "frontend",
+        "demoUrl": "https://levy112.github.io/EcomerceLevy/",
+        "githubUrl": "https://github.com/levy112/EcomerceLevy",
+        "featured": true
+    },
+    {
+        id: "modern-portfolio",
+        title: "Modern Developer Portfolio",
+        description: "Mi portafolio personal desarrollado con React, TypeScript y animaciones avanzadas.",
+        longDescription: "Un portafolio web de alto rendimiento y estética premium. Utiliza Framer Motion para micro-animaciones, CSS Modules para estilos aislados y una arquitectura limpia. Diseñado para ser completamente responsivo y accesible, reflejando mi enfoque en la calidad del código y la experiencia de usuario.",
+        image: "/portafolioWeb/projects/portfolio-thumb.webp",
+        tags: ["REACT", "TYPESCRIPT", "FRAMER-MOTION", "VITE", "CSS-MODULES"],
+        category: "frontend",
+        demoUrl: "https://levy112.github.io/portafolioWeb/",
+        githubUrl: "https://github.com/levy112/portafolioWeb",
+        featured: true
+    },
     {
         id: 'expediente-digital',
         title: 'Sistema de Expediente Digital',
@@ -107,16 +132,6 @@ export const PROJECTS: Project[] = [
         image: '/projects/api.webp',
         tags: ['Java', 'Spring Boot', 'Spring Security', 'REST API', 'OpenAPI'],
         category: 'backend',
-        featured: false,
-    },
-    {
-        id: 'web-naturista',
-        title: 'Plataforma Web E-Commerce',
-        description: 'Desarrollo full-stack de plataforma web con PHP/CodeIgniter y frontend moderno.',
-        longDescription: 'Aplicación web de comercio electrónico desarrollada con PHP/CodeIgniter 4, MySQL y frontend con HTML5, CSS3, JavaScript y HTMX. Incluye catálogo de productos, carrito de compras, sistema de pedidos y panel de administración.',
-        image: '/projects/ecommerce.webp',
-        tags: ['PHP', 'CodeIgniter', 'MySQL', 'HTML5', 'CSS3', 'HTMX'],
-        category: 'fullstack',
         featured: false,
     },
 ];
@@ -175,6 +190,7 @@ export const SKILL_CATEGORIES = [
 
 export const PROJECT_CATEGORIES = [
     { key: 'all' as const, label: 'Todos' },
+    { key: 'frontend' as const, label: 'Frontend' },
     { key: 'fullstack' as const, label: 'Full Stack' },
     { key: 'backend' as const, label: 'Backend' },
 ];

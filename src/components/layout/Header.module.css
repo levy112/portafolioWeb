@@ -81,6 +81,24 @@
     background: rgba(124, 58, 237, 0.1);
 }
 
+.cvButton {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.cvButton:hover {
+    color: var(--color-accent-primary);
+    background: rgba(124, 58, 237, 0.1);
+}
+
 /* ─── Mobile Menu Button ─── */
 .menuButton {
     display: none;

@@ -42,7 +42,11 @@ export function About() {
                 >
                     <motion.div className={styles.imageWrapper} variants={itemVariants}>
                         <div className={styles.imageContainer}>
-                            <div className={styles.imagePlaceholder}>👨‍💻</div>
+                            <img
+                                src={PERSONAL_INFO.avatarUrl}
+                                alt={PERSONAL_INFO.name}
+                                className={styles.profileImage}
+                            />
                         </div>
                         <div className={styles.imageGlow} />
                     </motion.div>

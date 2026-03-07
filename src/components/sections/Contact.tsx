@@ -26,11 +26,30 @@ export function Contact() {
     const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>();
     const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Simular envío
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 3000);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('https://formspree.io/f/xojvzbvr', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+                form.reset();
+                setTimeout(() => setSubmitted(false), 5000);
+            } else {
+                alert("❌ Ocurrió un error al enviar el mensaje.");
+            }
+        } catch (error) {
+            alert("❌ No se pudo enviar el mensaje.");
+        }
     };
 
     return (
@@ -99,6 +118,7 @@ export function Contact() {
                                 <input
                                     id="contact-name"
                                     type="text"
+                                    name="nombre"
                                     className={styles.input}
                                     placeholder="Tu nombre"
                                     required
@@ -111,6 +131,7 @@ export function Contact() {
                                 <input
                                     id="contact-email"
                                     type="email"
+                                    name="email"
                                     className={styles.input}
                                     placeholder="tu@email.com"
                                     required
@@ -125,6 +146,7 @@ export function Contact() {
                             <input
                                 id="contact-subject"
                                 type="text"
+                                name="tema"
                                 className={styles.input}
                                 placeholder="¿En qué puedo ayudarte?"
                                 required
@@ -137,6 +159,7 @@ export function Contact() {
                             </label>
                             <textarea
                                 id="contact-message"
+                                name="mensaje"
                                 className={styles.textarea}
                                 placeholder="Cuéntame sobre tu proyecto..."
                                 required

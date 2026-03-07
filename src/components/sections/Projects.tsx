@@ -90,7 +90,20 @@ export function Projects() {
                                     {project.featured && (
                                         <span className={styles.featured}>⭐ Destacado</span>
                                     )}
-                                    <h3 className={styles.cardTitle}>{project.title}</h3>
+                                    <h3 className={styles.cardTitle}>
+                                        {project.demoUrl ? (
+                                            <a
+                                                href={project.demoUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={styles.titleLink}
+                                            >
+                                                {project.title}
+                                            </a>
+                                        ) : (
+                                            project.title
+                                        )}
+                                    </h3>
                                     <p className={styles.cardDescription}>{project.description}</p>
                                     <div className={styles.tags}>
                                         {project.tags.map((tag) => (

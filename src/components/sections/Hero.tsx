@@ -85,6 +85,11 @@ export function Hero() {
                     initial="hidden"
                     animate="visible"
                 >
+                    <motion.div className={styles.badge} variants={itemVariants}>
+                        <span className={styles.badgeIcon}>🚧</span>
+                        <span>Sitio en desarrollo - ¡Próximamente más novedades!</span>
+                    </motion.div>
+
                     <motion.span className={styles.greeting} variants={itemVariants}>
                         👋 ¡Hola! Mi nombre es
                     </motion.span>
@@ -108,7 +113,10 @@ export function Hero() {
                         <Button variant="primary" size="lg" href="#projects">
                             Ver Proyectos
                         </Button>
-                        <Button variant="outline" size="lg" href="#contact">
+                        <Button variant="outline" size="lg" href={PERSONAL_INFO.resumeUrl}>
+                            Descargar CV
+                        </Button>
+                        <Button variant="ghost" size="lg" href="#contact">
                             Contactar
                         </Button>
                     </motion.div>

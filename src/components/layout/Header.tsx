@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
 import { useTheme } from '../../context/ThemeContext';
-import { NAV_ITEMS } from '../../data/portfolio';
+import { NAV_ITEMS, PERSONAL_INFO } from '../../data/portfolio';
 import styles from './Header.module.css';
 
 export function Header() {
@@ -75,6 +75,16 @@ export function Header() {
                 </nav>
 
                 <div className={styles.actions}>
+                    <a
+                        href={PERSONAL_INFO.resumeUrl}
+                        className={styles.cvButton}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Descargar CV"
+                        title="Descargar CV"
+                    >
+                        📄
+                    </a>
                     <button
                         className={styles.themeToggle}
                         onClick={toggleTheme}
